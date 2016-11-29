@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  male: false
+  time_in_months: false
+  time_amount: 1
+  l: 1.5
+  m: 1.5
+  s: 1.5
+
+two:
+  male: false
+  time_in_months: false
+  time_amount: 1
+  l: 1.5
+  m: 1.5
+  s: 1.5

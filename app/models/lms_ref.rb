@@ -1,0 +1,2 @@
+class LmsRef < ApplicationRecord
+end
