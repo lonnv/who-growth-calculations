@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129204300) do
+ActiveRecord::Schema.define(version: 20161130115736) do
+
+  create_table "charts", force: :cascade do |t|
+    t.date     "birth_day"
+    t.boolean  "male"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lms_refs", force: :cascade do |t|
     t.boolean  "male"
@@ -21,6 +28,16 @@ ActiveRecord::Schema.define(version: 20161129204300) do
     t.float    "s"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.date     "date"
+    t.float    "weight"
+    t.integer  "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "chart_id"
+    t.index ["chart_id"], name: "index_measurements_on_chart_id"
   end
 
 end
