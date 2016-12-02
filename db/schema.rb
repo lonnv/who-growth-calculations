@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130115736) do
+ActiveRecord::Schema.define(version: 20161130120732) do
 
   create_table "charts", force: :cascade do |t|
     t.date     "birth_day"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20161130115736) do
     t.datetime "updated_at", null: false
     t.integer  "chart_id"
     t.index ["chart_id"], name: "index_measurements_on_chart_id"
+  end
+
+  create_table "p_values", force: :cascade do |t|
+    t.string   "type_of_measurement"
+    t.integer  "score"
+    t.integer  "measurement_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["measurement_id"], name: "index_p_values_on_measurement_id"
   end
 
 end

@@ -13,6 +13,6 @@ class LmsRef < ApplicationRecord
     lms_refs = lms_refs.where(male: measurement.chart.male)
     result = lms_refs.where("created_at <= ?", birth_day).order("created_at DESC").limit(1)
     result = lms_refs.where("created_at >= ?", birth_day).order("created_at ASC").limit(1) if result.empty?
-    return result
+    result
   end
 end
